@@ -13,9 +13,7 @@ def get_length_of_string(string: str) -> int:
 if __name__ == "__main__":
     # llm intialization
     llm = ChatGoogleGenerativeAI(
-        temperature=0,
         model="gemini-1.5-pro",
-        max_tokens=1024,
     )
 
     # list of tools - n no of tools
@@ -51,7 +49,7 @@ if __name__ == "__main__":
     chain = {"input": lambda x: x["input"]} | prompt | llm
 
     res = chain.invoke(
-        {"input": "What is the length in characters of the text 'Aayush Rana'?" }
+        {"input": "What is the length in characters of the text 'Taj Mahal'?" }
     )
 
     print(res)
